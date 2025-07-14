@@ -21,133 +21,35 @@ if (ini_get("session.use_cookies")) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Activity B - Logout</title>
     <meta http-equiv="refresh" content="3;url=login.php">
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            min-height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            padding: 20px;
-        }
-        
-        .logout-container {
-            background: white;
-            border-radius: 20px;
-            padding: 40px;
-            box-shadow: 0 15px 35px rgba(0,0,0,0.1);
-            text-align: center;
-            max-width: 500px;
-            width: 100%;
-        }
-        
-        .success-icon {
-            width: 80px;
-            height: 80px;
-            background: #28a745;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin: 0 auto 30px;
-        }
-        
-        .success-icon::after {
-            content: "✓";
-            color: white;
-            font-size: 40px;
-            font-weight: bold;
-        }
-        
-        .logout-title {
-            color: #333;
-            font-size: 28px;
-            font-weight: 700;
-            margin-bottom: 20px;
-        }
-        
-        .logout-message {
-            color: #666;
-            font-size: 16px;
-            margin-bottom: 30px;
-            line-height: 1.6;
-        }
-        
-        .redirect-info {
-            background: #e7f3ff;
-            border: 1px solid #b3d7ff;
-            color: #0066cc;
-            padding: 15px;
-            border-radius: 10px;
-            margin-bottom: 30px;
-            font-size: 14px;
-        }
-        
-        .action-buttons {
-            display: flex;
-            gap: 15px;
-            justify-content: center;
-            flex-wrap: wrap;
-        }
-        
-        .btn {
-            padding: 12px 24px;
-            border: none;
-            border-radius: 10px;
-            font-weight: 600;
-            text-decoration: none;
-            display: inline-block;
-            transition: all 0.3s ease;
-            cursor: pointer;
-        }
-        
-        .btn-primary {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
-        }
-        
-        .btn-secondary {
-            background: #6c757d;
-            color: white;
-        }
-        
-        .btn:hover {
-            transform: translateY(-2px);
-        }
-        
-        @media (max-width: 480px) {
-            .action-buttons {
-                flex-direction: column;
-            }
-        }
-    </style>
+    <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body>
-    <div class="logout-container">
-        <div class="success-icon"></div>
-        
-        <h2 class="logout-title">Logout Successful</h2>
-        
-        <p class="logout-message">
-            You have been successfully logged out of the system. 
-            All your session data has been destroyed for security purposes.
-        </p>
-        
-        <div class="redirect-info">
-            <strong>Auto Redirect:</strong><br>
-            You will be automatically redirected to the login page in 3 seconds...
+<body class="bg-gradient-to-br from-indigo-400 to-purple-600 min-h-screen flex items-center justify-center py-8">
+    <div class="bg-white rounded-2xl p-10 shadow-xl text-center max-w-md w-full mx-4">
+        <div class="mb-6">
+            <div class="w-20 h-20 bg-green-500 rounded-full flex items-center justify-center mx-auto mb-4">
+                <svg class="w-10 h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                </svg>
+            </div>
         </div>
         
-        <div class="action-buttons">
-            <a href="login.php" class="btn btn-primary">Login Again</a>
-            <a href="ActB.php" class="btn btn-secondary">Registration</a>
+        <h2 class="text-3xl font-bold text-gray-800 mb-4">Logout Successful</h2>
+        <p class="text-gray-600 mb-6 leading-relaxed">
+            You have been successfully logged out. Your session has been destroyed for security.
+        </p>
+        
+        <div class="bg-blue-50 border border-blue-200 text-blue-700 px-4 py-3 rounded-lg mb-6 text-sm">
+            <strong>Auto Redirect:</strong><br>
+            You will be redirected to the login page in 3 seconds...
+        </div>
+        
+        <div class="space-y-3">
+            <a href="login.php" class="block w-full bg-gradient-to-r from-indigo-500 to-purple-600 text-white py-3 rounded-lg font-semibold hover:-translate-y-1 hover:shadow-lg transition">
+                Login Again
+            </a>
+            <a href="ActB.php" class="block w-full bg-gray-500 hover:bg-gray-600 text-white py-3 rounded-lg font-semibold hover:-translate-y-1 hover:shadow-lg transition">
+                Registration
+            </a>
         </div>
     </div>
 </body>
